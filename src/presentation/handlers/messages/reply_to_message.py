@@ -30,7 +30,12 @@ async def handle_reply_to_message(
                 chat_id=existing_anonymous_message.from_user_id,
                 message_id=message.message_id,
                 from_chat_id=message.from_user.id,
-                reply_parameters=ReplyParameters(message_id=existing_anonymous_message.from_message_id),
+                reply_parameters=ReplyParameters(
+                    message_id=existing_anonymous_message.from_message_id,
+                    quote=message.quote.text if message.quote else None,
+                    quote_position=message.quote.position if message.quote else None,
+                    quote_entities=message.quote.entities if message.quote else None,
+                ),
             )
         except TelegramBadRequest:
             copied_message = await bot.copy_message(
