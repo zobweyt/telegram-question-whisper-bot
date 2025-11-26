@@ -1,0 +1,93 @@
+[project]
+name = "telegram-question-whisper-bot"
+version = "0.1.0"
+description = ""
+authors = [{ name = "Nikita Gaziev", email = "zobweyt@gmail.com" }]
+maintainers = [{ name = "Nikita Gaziev", email = "zobweyt@gmail.com" }]
+readme = { file = "README.md", content-type = "text/markdown" }
+license = { file = "LICENSE.md" }
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram-dialog>=2.3.1",
+    "aiogram[i18n]>=3.22.0",
+    "alembic>=1.16.5",
+    "pydantic-settings-logging>=0.1.1",
+    "pydantic-settings>=2.8.1",
+    "pydantic>=2.10.6",
+    "sqlalchemy[aiosqlite]>=2.0.43",
+]
+
+[dependency-groups]
+build = [
+    "pyinstaller>=6.15.0",
+]
+dev = [
+    "pre-commit>=4.3.0",
+]
+style = [
+    "mypy>=1.15.0",
+    "ruff>=0.9.9",
+]
+
+[tool.mypy]
+files = "src"
+strict = true
+ignore_missing_imports = true
+
+[tool.ruff]
+indent-width = 4
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle
+    "F", # Pyflakes
+    "I", # isort
+]
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "lf"
+quote-style = "double"
+
+[tool.alembic]
+script_location = "%(here)s/src/infrastructure/sqlite/migrations"
+prepend_sys_path = ["."]
+version_path_separator = "os"
+
+[[tool.alembic.post_write_hooks]]
+name = "check"
+type = "exec"
+executable = "ruff"
+options = "check --fix REVISION_SCRIPT_FILENAME"
+
+[[tool.alembic.post_write_hooks]]
+name = "format"
+type = "exec"
+executable = "ruff"
+options = "format REVISION_SCRIPT_FILENAME"
+
+[tool.logging]
+version = 1
+disable_existing_loggers = false
+
+[tool.logging.formatters.verbose]
+format = "%(asctime)s %(name)s: [%(levelname)s] %(message)s"
+datefmt = "%H:%M:%S"
+
+[tool.logging.handlers.file]
+class = "logging.handlers.RotatingFileHandler"
+level = "INFO"
+formatter = "verbose"
+filename = "app.log"
+maxBytes = 10485760
+backupCount = 3
+
+[tool.logging.handlers.console]
+class = "logging.StreamHandler"
+level = "INFO"
+formatter = "verbose"
+
+[tool.logging.root]
+level = "INFO"
+handlers = ["file", "console"]

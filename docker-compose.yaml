@@ -1,0 +1,14 @@
+name: telegram-question-whisper-bot
+
+services:
+  telegram-question-whisper-bot:
+    container_name: telegram-question-whisper-bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3
+    env_file:
+      - path: .env
+        required: true

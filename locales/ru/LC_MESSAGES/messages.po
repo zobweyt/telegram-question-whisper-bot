@@ -1,0 +1,160 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-26 12:08+0000\n"
+"PO-Revision-Date: 2025-08-28 16:13+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: src/infrastructure/telegram/localizer.py:43
+msgid "bot.name"
+msgstr "Анонимные сообщения"
+
+#: src/infrastructure/telegram/localizer.py:49
+msgid "bot.description"
+msgstr ""
+"Запустите бота, чтобы получать и отправлять анонимные сообщения!\n"
+"\n"
+"Бот поддерживает сообщения любого типа и реакции без ограничений, а также ответы на анонимные сообщения.\n"
+"\n"
+"Автор: @zobweyt"
+
+#: src/infrastructure/telegram/localizer.py:55
+msgid "bot.short_description"
+msgstr ""
+"Получайте и отправляйте анонимные сообщения!\n"
+"\n"
+"Автор: @zobweyt"
+
+#: src/infrastructure/telegram/localizer.py:64
+msgid "bot.commands.start.description"
+msgstr "🔗 Получить свою ссылку на анонимные сообщения"
+
+#: src/infrastructure/telegram/localizer.py:68
+msgid "bot.commands.send.description"
+msgstr "📬 Отправить анонимное сообщение другому пользователю"
+
+#: src/presentation/dialogs/anonymous_message/windows/input.py:33 src/presentation/handlers/messages/reply_to_message.py:42
+msgid "user_blocked_bot"
+msgstr "❌ Пользователь заблокировал бота!"
+
+#: src/presentation/dialogs/anonymous_message/windows/input.py:57
+msgid "anonymous_message_input.message.text"
+msgstr "👉 Отправьте анонимное сообщение пользователю:"
+
+#: src/presentation/dialogs/anonymous_message/windows/input.py:65 src/presentation/dialogs/user/windows/edit_url.py:73
+msgid "back"
+msgstr "⬅️ Назад"
+
+#: src/presentation/dialogs/anonymous_message/windows/input.py:70
+msgid "cancel"
+msgstr "❌ Отмена"
+
+#: src/presentation/dialogs/anonymous_message/windows/sent.py:9 src/presentation/handlers/messages/reply_to_message.py:54
+msgid "sent"
+msgstr "✅ Сообщение отправлено!"
+
+#: src/presentation/dialogs/anonymous_message/windows/sent.py:11
+msgid "followup"
+msgstr "✏️ Отправить ещё"
+
+#: src/presentation/dialogs/user/windows/edit_url.py:31
+msgid "url_busy"
+msgstr "❌ Эта ссылка уже занята другим пользователем!"
+
+#: src/presentation/dialogs/user/windows/edit_url.py:41
+msgid "url_invalid_format"
+msgstr "❌ Ссылка должна быть длиной до 64 символов и содержать английские буквы, цифры, символы подчёркивания и дефисы!"
+
+#: src/presentation/dialogs/user/windows/edit_url.py:65
+msgid "start.edit_url.text"
+msgstr ""
+"🔗 Ваша текущая ссылка для анонимных сообщений: {start_link}\n"
+"\n"
+"✏️ Вы можете изменить её уникальную часть (после <code>start=</code>). Для этого отправьте текстовое сообщение в чат."
+"\n"
+"\n"
+"❓ Например, для ссылки вида <code>{raw_start_link}username</code> введите <code>username</code>.\n"
+"\n"
+"⚠️ После смены ваша старая ссылка перестанет работать и количество посещений будет сброшено!"
+
+#: src/presentation/dialogs/user/windows/view_url.py:30
+msgid "start.keyboard.share.url.url"
+msgstr "По этой ссылке можно отправить мне анонимное сообщение 👉 {start_link}"
+
+#: src/presentation/dialogs/user/windows/view_url.py:43
+msgid "start.message.text"
+msgstr ""
+"💬 Начните получать анонимные сообщения прямо сейчас!\n"
+"\n"
+"👉 Ваша ссылка: {start_link} (посещений: {url_visit_count})\n"
+"\n"
+"❓ Поделитесь этой ссылкой с друзьями или подписчиками, чтобы получать анонимные сообщения!"
+
+#: src/presentation/dialogs/user/windows/view_url.py:46
+msgid "start.keyboard.share.text"
+msgstr "📤 Поделиться"
+
+#: src/presentation/dialogs/user/windows/view_url.py:50
+msgid "start.keyboard.copy.text"
+msgstr "🔗 Скопировать"
+
+#: src/presentation/dialogs/user/windows/view_url.py:55
+msgid "start.keyboard.edit.text"
+msgstr "✏️ Изменить ссылку"
+
+#: src/presentation/handlers/commands/send.py:7
+msgid "send.message.text"
+msgstr ""
+"📬 Вы можете отправлять анонимные сообщения только тем пользователям, которые ранее запускали этого бота.\n"
+"\n"
+"👇 Выберите, кому отправить анонимное сообщение 👇"
+
+#: src/presentation/handlers/commands/send.py:12
+msgid "send.keyboard.request.text"
+msgstr "🔎 Выбрать пользователя"
+
+#: src/presentation/handlers/commands/start.py:37
+msgid "start_deep_link.error.decode"
+msgstr "❌ Ссылка не найдена!"
+
+#: src/presentation/handlers/commands/start.py:41 src/presentation/handlers/messages/user_shared.py:19
+msgid "start_deep_link.error.self"
+msgstr "❌ Вы не можете писать анонимные сообщения себе!"
+
+#: src/presentation/handlers/errors/error.py:29
+msgid "error"
+msgstr "❌ Произошло непредвиденное исключение:"
+
+#: src/presentation/handlers/errors/unknown_intent.py:20 src/presentation/handlers/errors/unknown_intent.py:32
+msgid "restarted"
+msgstr "🔃 Процесс бота был перезапущен в связи с проведением технического обслуживания."
+
+#: src/presentation/handlers/messages/message_reaction.py:35
+msgid "message_not_found"
+msgstr "❌ Сообщение не найдено!"
+
+#: src/presentation/handlers/messages/message_reaction.py:42
+msgid "reactions_updated"
+msgstr "✅ Реакции обновлены!"
+
+#: src/presentation/handlers/messages/user_shared.py:26
+msgid "user_shared.fail"
+msgstr "❌ Пользователь не запускал бота ранее!"
+
+#: src/presentation/handlers/messages/user_shared.py:32
+msgid "user_shared.accepted"
+msgstr "✅ Пользователь получен!"
+
