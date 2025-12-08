@@ -16,7 +16,7 @@ async def handle_reply_to_message(
     if message.from_user is None or message.reply_to_message is None:
         return
 
-    existing_anonymous_message = await anonymous_message_service.get_anonymous_message_by_ids(
+    existing_anonymous_message = await anonymous_message_service.get_anonymous_message_by_to_ids(
         to_user_id=message.from_user.id,
         to_message_id=message.reply_to_message.message_id,
     )

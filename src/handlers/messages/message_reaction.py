@@ -15,20 +15,32 @@ async def handle_message_reaction(
     if message_reaction.user is None:
         return
 
-    existing_anonymous_message = await anonymous_message_service.get_anonymous_message_by_ids(
+    existing_anonymous_message = await anonymous_message_service.get_anonymous_message_by_to_ids(
         to_user_id=message_reaction.user.id,
         to_message_id=message_reaction.message_id,
     )
 
-    if existing_anonymous_message is None:
-        return
-
     try:
-        await bot.set_message_reaction(
-            chat_id=existing_anonymous_message.from_user_id,
-            message_id=existing_anonymous_message.from_message_id,
-            reaction=message_reaction.new_reaction,
-        )
+        if existing_anonymous_message is None:
+            existing_anonymous_message = await anonymous_message_service.get_anonymous_message_by_from_ids(
+                from_user_id=message_reaction.user.id,
+                from_message_id=message_reaction.message_id,
+            )
+
+            if existing_anonymous_message is None:
+                return
+
+            await bot.set_message_reaction(
+                chat_id=existing_anonymous_message.to_user_id,
+                message_id=existing_anonymous_message.to_message_id,
+                reaction=message_reaction.new_reaction,
+            )
+        else:
+            await bot.set_message_reaction(
+                chat_id=existing_anonymous_message.from_user_id,
+                message_id=existing_anonymous_message.from_message_id,
+                reaction=message_reaction.new_reaction,
+            )
     except TelegramBadRequest:
         await bot.send_message(
             chat_id=message_reaction.user.id,

@@ -5,10 +5,18 @@ class AnonymousMessageService:
     def __init__(self, *, anonymous_message_sqlite_repository: AnonymousMessageSQLiteRepository):
         self.anonymous_message_sqlite_repository = anonymous_message_sqlite_repository
 
-    async def get_anonymous_message_by_ids(self, *, to_user_id: int, to_message_id: int) -> AnonymousMessage | None:
-        return await self.anonymous_message_sqlite_repository.get_by_ids(
+    async def get_anonymous_message_by_to_ids(self, *, to_user_id: int, to_message_id: int) -> AnonymousMessage | None:
+        return await self.anonymous_message_sqlite_repository.get_by_to_ids(
             to_user_id=to_user_id,
             to_message_id=to_message_id,
+        )
+
+    async def get_anonymous_message_by_from_ids(
+        self, *, from_user_id: int, from_message_id: int
+    ) -> AnonymousMessage | None:
+        return await self.anonymous_message_sqlite_repository.get_by_from_ids(
+            from_user_id=from_user_id,
+            from_message_id=from_message_id,
         )
 
     async def create_anonymous_message(self, anonymous_message: AnonymousMessage) -> AnonymousMessage:
