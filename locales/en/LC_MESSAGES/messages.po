@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-11-26 12:08+0000\n"
+"POT-Creation-Date: 2025-12-08 19:41+0000\n"
 "PO-Revision-Date: 2025-08-28 16:13+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: src/infrastructure/telegram/localizer.py:43
+#: src/core/localizer.py:43
 msgid "bot.name"
 msgstr "Anonymous messages"
 
-#: src/infrastructure/telegram/localizer.py:49
+#: src/core/localizer.py:49
 msgid "bot.description"
 msgstr ""
 "Launch the bot to receive and send anonymous messages!\n"
@@ -32,54 +32,54 @@ msgstr ""
 "\n"
 "Author: @zobweyt"
 
-#: src/infrastructure/telegram/localizer.py:55
+#: src/core/localizer.py:55
 msgid "bot.short_description"
 msgstr ""
 "Receive and send anonymous messages!\n"
 "\n"
 "Author: @zobweyt"
 
-#: src/infrastructure/telegram/localizer.py:64
+#: src/core/localizer.py:64
 msgid "bot.commands.start.description"
 msgstr "🔗 Get your link to anonymous messages"
 
-#: src/infrastructure/telegram/localizer.py:68
+#: src/core/localizer.py:68
 msgid "bot.commands.send.description"
 msgstr "📬 Send anonymous message to another user"
 
-#: src/presentation/dialogs/anonymous_message/windows/input.py:33 src/presentation/handlers/messages/reply_to_message.py:42
+#: src/dialogs/anonymous_message/windows/input.py:33 src/handlers/messages/reply_to_message.py:47
 msgid "user_blocked_bot"
 msgstr "❌ User blocked the bot!"
 
-#: src/presentation/dialogs/anonymous_message/windows/input.py:57
+#: src/dialogs/anonymous_message/windows/input.py:57
 msgid "anonymous_message_input.message.text"
 msgstr "👉 Send an anonymous message to the user:"
 
-#: src/presentation/dialogs/anonymous_message/windows/input.py:65 src/presentation/dialogs/user/windows/edit_url.py:73
+#: src/dialogs/anonymous_message/windows/input.py:65 src/dialogs/user/windows/edit_url.py:83
 msgid "back"
 msgstr "⬅️ Back"
 
-#: src/presentation/dialogs/anonymous_message/windows/input.py:70
+#: src/dialogs/anonymous_message/windows/input.py:70
 msgid "cancel"
 msgstr "❌ Cancel"
 
-#: src/presentation/dialogs/anonymous_message/windows/sent.py:9 src/presentation/handlers/messages/reply_to_message.py:54
+#: src/dialogs/anonymous_message/windows/sent.py:9 src/handlers/messages/reply_to_message.py:59
 msgid "sent"
 msgstr "✅ Message sent!"
 
-#: src/presentation/dialogs/anonymous_message/windows/sent.py:11
+#: src/dialogs/anonymous_message/windows/sent.py:11
 msgid "followup"
 msgstr "✏️ Send more"
 
-#: src/presentation/dialogs/user/windows/edit_url.py:31
+#: src/dialogs/user/windows/edit_url.py:41
 msgid "url_busy"
 msgstr "❌ This link is already taken by another user!"
 
-#: src/presentation/dialogs/user/windows/edit_url.py:41
+#: src/dialogs/user/windows/edit_url.py:51
 msgid "url_invalid_format"
 msgstr "❌ The link must be up to 64 characters long and contain English letters, numbers, underscores and hyphens!"
 
-#: src/presentation/dialogs/user/windows/edit_url.py:65
+#: src/dialogs/user/windows/edit_url.py:75
 msgid "start.edit_url.text"
 msgstr ""
 "🔗 Your current link for anonymous messages: {start_link}\n"
@@ -90,11 +90,11 @@ msgstr ""
 "\n"
 "⚠️ After changing, your old link will stop working and the number of visits will be reset!"
 
-#: src/presentation/dialogs/user/windows/view_url.py:30
+#: src/dialogs/user/windows/view_url.py:30
 msgid "start.keyboard.share.url.url"
 msgstr "You can send me an anonymous message using this link 👉 {start_link}"
 
-#: src/presentation/dialogs/user/windows/view_url.py:43
+#: src/dialogs/user/windows/view_url.py:43
 msgid "start.message.text"
 msgstr ""
 "💬 Start receiving anonymous messages now!\n"
@@ -103,58 +103,58 @@ msgstr ""
 "\n"
 "❓ Share this link with your friends or followers to receive anonymous messages!"
 
-#: src/presentation/dialogs/user/windows/view_url.py:46
+#: src/dialogs/user/windows/view_url.py:46
 msgid "start.keyboard.share.text"
 msgstr "📤 Share"
 
-#: src/presentation/dialogs/user/windows/view_url.py:50
+#: src/dialogs/user/windows/view_url.py:50
 msgid "start.keyboard.copy.text"
 msgstr "🔗 Copy"
 
-#: src/presentation/dialogs/user/windows/view_url.py:55
+#: src/dialogs/user/windows/view_url.py:55
 msgid "start.keyboard.edit.text"
 msgstr "✏️ Edit link"
 
-#: src/presentation/handlers/commands/send.py:7
+#: src/handlers/commands/send.py:7
 msgid "send.message.text"
 msgstr ""
 "📬 You can only send anonymous messages to users who have previously launched this bot.\n"
 "\n"
 "👇 Choose who to send the anonymous message to 👇"
 
-#: src/presentation/handlers/commands/send.py:12
+#: src/handlers/commands/send.py:12
 msgid "send.keyboard.request.text"
 msgstr "🔎 Select user"
 
-#: src/presentation/handlers/commands/start.py:37
+#: src/handlers/commands/start.py:37
 msgid "start_deep_link.error.decode"
 msgstr "❌ Link not found!"
 
-#: src/presentation/handlers/commands/start.py:41 src/presentation/handlers/messages/user_shared.py:19
+#: src/handlers/commands/start.py:41 src/handlers/messages/user_shared.py:19
 msgid "start_deep_link.error.self"
 msgstr "❌ You cannot write anonymous messages to yourself!"
 
-#: src/presentation/handlers/errors/error.py:29
+#: src/handlers/errors/error.py:29
 msgid "error"
 msgstr "❌ An unexpected exception occurred:"
 
-#: src/presentation/handlers/errors/unknown_intent.py:20 src/presentation/handlers/errors/unknown_intent.py:32
+#: src/handlers/errors/unknown_intent.py:20 src/handlers/errors/unknown_intent.py:32
 msgid "restarted"
 msgstr "🔃 The bot process has been restarted due to maintenance."
 
-#: src/presentation/handlers/messages/message_reaction.py:35
+#: src/handlers/messages/message_reaction.py:35
 msgid "message_not_found"
 msgstr "❌ Message not found!"
 
-#: src/presentation/handlers/messages/message_reaction.py:42
+#: src/handlers/messages/message_reaction.py:42
 msgid "reactions_updated"
 msgstr "✅ Reactions updated!"
 
-#: src/presentation/handlers/messages/user_shared.py:26
+#: src/handlers/messages/user_shared.py:26
 msgid "user_shared.fail"
 msgstr "❌ The user has not launched the bot before!"
 
-#: src/presentation/handlers/messages/user_shared.py:32
+#: src/handlers/messages/user_shared.py:32
 msgid "user_shared.accepted"
 msgstr "✅ User received!"
 

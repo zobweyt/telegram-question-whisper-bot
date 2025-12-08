@@ -13,11 +13,9 @@ from aiogram.utils.i18n.middleware import SimpleI18nMiddleware
 from aiogram_dialog import setup_dialogs
 from aiogram_dialog.api.exceptions import UnknownIntent
 
-from src.infrastructure.settings import settings
-from src.infrastructure.sqlite import SQLiteAsyncSession
-from src.infrastructure.telegram import BotLocalizer
-from src.presentation.dialogs import anonymous_message_dialog, user_dialog
-from src.presentation.handlers import (
+from src.core import BotLocalizer
+from src.dialogs import anonymous_message_dialog, user_dialog
+from src.handlers import (
     handle_error,
     handle_message_reaction,
     handle_reply_to_message,
@@ -27,12 +25,16 @@ from src.presentation.handlers import (
     handle_unknown_intent,
     handle_user_shared,
 )
-from src.presentation.middlewares import (
+from src.middleware import (
     AnonymousMessageServiceMiddleware,
+    AnonymousMessageSQLiteRepositoryMiddleware,
     CurrentUserMiddleware,
     SQLiteSessionMiddleware,
     UserServiceMiddleware,
+    UserSQLiteRepositoryMiddleware,
 )
+from src.settings import settings
+from src.sqlite import SQLiteAsyncSession
 
 
 async def main() -> None:
@@ -79,9 +81,11 @@ async def main() -> None:
     SimpleI18nMiddleware(i18n).setup(dispatcher)
 
     dispatcher.update.middleware(SQLiteSessionMiddleware(SQLiteAsyncSession))
+    dispatcher.update.middleware(UserSQLiteRepositoryMiddleware())
     dispatcher.update.middleware(UserServiceMiddleware())
-    dispatcher.update.middleware(AnonymousMessageServiceMiddleware())
     dispatcher.update.middleware(CurrentUserMiddleware())
+    dispatcher.update.middleware(AnonymousMessageSQLiteRepositoryMiddleware())
+    dispatcher.update.middleware(AnonymousMessageServiceMiddleware())
 
     setup_dialogs(dispatcher)
 

@@ -51,7 +51,7 @@ line-ending = "lf"
 quote-style = "double"
 
 [tool.alembic]
-script_location = "%(here)s/src/infrastructure/sqlite/migrations"
+script_location = "%(here)s/src/sqlite/migrations"
 prepend_sys_path = ["."]
 version_path_separator = "os"
 
