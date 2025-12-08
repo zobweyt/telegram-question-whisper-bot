@@ -1,14 +1,14 @@
 import re
 from typing import Any
 
-from aiogram.types import Message
+from aiogram.types import CallbackQuery, Message
 from aiogram.utils.deep_linking import BAD_PATTERN, create_start_link
 from aiogram.utils.i18n import gettext as _
 from aiogram.utils.i18n import lazy_gettext as __
 from aiogram_dialog import DialogManager, Window
 from aiogram_dialog.api.entities.modes import ShowMode
 from aiogram_dialog.widgets.input import TextInput
-from aiogram_dialog.widgets.kbd import SwitchTo
+from aiogram_dialog.widgets.kbd import Button, SwitchTo
 from aiogram_dialog.widgets.link_preview import LinkPreview
 
 from src.dialogs.format_lazy_proxy import FormatLazyProxy
@@ -51,6 +51,18 @@ async def _handle_error(message: Message, dialog: Any, dialog_manager: DialogMan
     await message.answer(_("url_invalid_format"))
 
 
+async def _use_random_url(callback: CallbackQuery, button: Button, dialog_manager: DialogManager) -> None:
+    user_service = dialog_manager.middleware_data.get("user_service")
+    current_user = dialog_manager.middleware_data.get("current_user")
+
+    if not isinstance(user_service, UserService) or not isinstance(current_user, User):
+        return
+
+    await user_service.update_user_url(current_user, url=await user_service.generate_unique_user_url())
+
+    await dialog_manager.switch_to(UserDialogStatesGroup.VIEW_URL, show_mode=ShowMode.EDIT)
+
+
 async def _get_window_context(
     dialog_manager: DialogManager,
     current_user: User,
@@ -78,6 +90,11 @@ user_dialog_edit_url_window = Window(
         type_factory=_validate_user_url,
         on_success=_handle_success,
         on_error=_handle_error,
+    ),
+    Button(
+        text=FormatLazyProxy(__("use_random_url")),
+        id="user_dialog_edit_url_window_use_random_url",
+        on_click=_use_random_url,
     ),
     SwitchTo(
         text=FormatLazyProxy(__("back")),

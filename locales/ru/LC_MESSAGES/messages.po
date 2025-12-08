@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-12-08 19:41+0000\n"
+"POT-Creation-Date: 2025-12-08 20:00+0000\n"
 "PO-Revision-Date: 2025-08-28 16:13+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -54,7 +54,7 @@ msgstr "❌ Пользователь заблокировал бота!"
 msgid "anonymous_message_input.message.text"
 msgstr "👉 Отправьте анонимное сообщение пользователю:"
 
-#: src/dialogs/anonymous_message/windows/input.py:65 src/dialogs/user/windows/edit_url.py:83
+#: src/dialogs/anonymous_message/windows/input.py:65 src/dialogs/user/windows/edit_url.py:99
 msgid "back"
 msgstr "⬅️ Назад"
 
@@ -78,7 +78,7 @@ msgstr "❌ Эта ссылка уже занята другим пользов�
 msgid "url_invalid_format"
 msgstr "❌ Ссылка должна быть длиной до 64 символов и содержать английские буквы, цифры, символы подчёркивания и дефисы!"
 
-#: src/dialogs/user/windows/edit_url.py:75
+#: src/dialogs/user/windows/edit_url.py:86
 msgid "start.edit_url.text"
 msgstr ""
 "🔗 Ваша текущая ссылка для анонимных сообщений: {start_link}\n"
@@ -89,6 +89,10 @@ msgstr ""
 "❓ Например, для ссылки вида <code>{raw_start_link}username</code> введите <code>username</code>.\n"
 "\n"
 "⚠️ После смены ваша старая ссылка перестанет работать и количество посещений будет сброшено!"
+
+#: src/dialogs/user/windows/edit_url.py:94
+msgid "use_random_url"
+msgstr "🎲 Случайная ссылка"
 
 #: src/dialogs/user/windows/view_url.py:30
 msgid "start.keyboard.share.url.url"
@@ -142,11 +146,11 @@ msgstr "❌ Произошло непредвиденное исключение
 msgid "restarted"
 msgstr "🔃 Процесс бота был перезапущен в связи с проведением технического обслуживания."
 
-#: src/handlers/messages/message_reaction.py:35
+#: src/handlers/messages/message_reaction.py:47
 msgid "message_not_found"
 msgstr "❌ Сообщение не найдено!"
 
-#: src/handlers/messages/message_reaction.py:42
+#: src/handlers/messages/message_reaction.py:54
 msgid "reactions_updated"
 msgstr "✅ Реакции обновлены!"
 
