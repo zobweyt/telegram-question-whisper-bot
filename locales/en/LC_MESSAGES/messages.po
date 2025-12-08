@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-12-08 20:00+0000\n"
+"POT-Creation-Date: 2025-12-08 20:08+0000\n"
 "PO-Revision-Date: 2025-08-28 16:13+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -55,7 +55,7 @@ msgstr "❌ User blocked the bot!"
 msgid "anonymous_message_input.message.text"
 msgstr "👉 Send an anonymous message to the user:"
 
-#: src/dialogs/anonymous_message/windows/input.py:65 src/dialogs/user/windows/edit_url.py:99
+#: src/dialogs/anonymous_message/windows/input.py:65 src/dialogs/user/windows/edit_url.py:102
 msgid "back"
 msgstr "⬅️ Back"
 
@@ -79,7 +79,11 @@ msgstr "❌ This link is already taken by another user!"
 msgid "url_invalid_format"
 msgstr "❌ The link must be up to 64 characters long and contain English letters, numbers, underscores and hyphens!"
 
-#: src/dialogs/user/windows/edit_url.py:86
+#: src/dialogs/user/windows/edit_url.py:63
+msgid "url_updated"
+msgstr "✅ Ссылка обновлена!"
+
+#: src/dialogs/user/windows/edit_url.py:89
 msgid "start.edit_url.text"
 msgstr ""
 "🔗 Your current link for anonymous messages: {start_link}\n"
@@ -90,7 +94,7 @@ msgstr ""
 "\n"
 "⚠️ After changing, your old link will stop working and the number of visits will be reset!"
 
-#: src/dialogs/user/windows/edit_url.py:94
+#: src/dialogs/user/windows/edit_url.py:97
 msgid "use_random_url"
 msgstr "🎲 Random link"
 

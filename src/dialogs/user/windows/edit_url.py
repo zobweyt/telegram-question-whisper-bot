@@ -60,6 +60,8 @@ async def _use_random_url(callback: CallbackQuery, button: Button, dialog_manage
 
     await user_service.update_user_url(current_user, url=await user_service.generate_unique_user_url())
 
+    await callback.answer(_("url_updated"))
+
     await dialog_manager.switch_to(UserDialogStatesGroup.VIEW_URL, show_mode=ShowMode.EDIT)
 
 
