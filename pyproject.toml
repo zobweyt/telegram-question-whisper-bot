@@ -50,23 +50,6 @@ indent-style = "space"
 line-ending = "lf"
 quote-style = "double"
 
-[tool.alembic]
-script_location = "%(here)s/src/sqlite/migrations"
-prepend_sys_path = ["."]
-version_path_separator = "os"
-
-[[tool.alembic.post_write_hooks]]
-name = "check"
-type = "exec"
-executable = "ruff"
-options = "check --fix REVISION_SCRIPT_FILENAME"
-
-[[tool.alembic.post_write_hooks]]
-name = "format"
-type = "exec"
-executable = "ruff"
-options = "format REVISION_SCRIPT_FILENAME"
-
 [tool.logging]
 version = 1
 disable_existing_loggers = false

@@ -47,6 +47,11 @@ dev: i18n-compile
 build:
     uv run --locked --group build pyinstaller --onefile --hidden-import=greenlet --hidden-import=aiosqlite ./src/__main__.py
 
+[doc("Apply pending SQLite migrations")]
+[group("sqlite")]
+sqlite-migrate:
+    uv run --locked alembic --name sqlite upgrade head
+
 [group("i18n")]
 i18n-extract:
     uv run --locked pybabel extract -w 120 -k _:1,1t -k _:1,2 -k __ --input-dirs=. -o locales/messages.pot

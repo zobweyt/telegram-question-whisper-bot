@@ -20,7 +20,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 RUN uv run --locked pybabel compile -d locales -D messages --statistics
 
 # Migrate
-RUN uv run --locked alembic upgrade head
+RUN uv run --locked alembic --name sqlite upgrade head
 
 # Run the application
 CMD sh -c "uv run --locked --module src"
